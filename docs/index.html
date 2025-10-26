@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { margin: 0; font-family: system-ui, sans-serif; }
-    .stage { position: relative; max-width: 1600px; margin: 24px auto; }
-    /* Image scales responsively */
-    .stage img { display: block; width: 100%; height: auto; }
-    /* Clickable overlay that covers the RIGHT HALF only */
-    .right-link { position: absolute; left: 50%; top: 0; right: 0; bottom: 0; }
+    .stage { position: relative; max-width: 1600px; margin: 24px auto; line-height: 0; }
+    .stage img { display: block; width: 100%; height: auto; pointer-events: none; }
+    /* Right-half clickable overlay */
+    .right-link { position: absolute; top: 0; right: 0; bottom: 0; left: 50%;
+                  z-index: 10; pointer-events: auto; }
     .right-link a { display: block; width: 100%; height: 100%; cursor: pointer; }
+    /* DEBUG: uncomment next line to see the clickable zone visually */
+    /* .right-link { background: rgba(0,0,0,0.12); } */
   </style>
 </head>
 <body>
   <div class="stage">
-    <!-- Your main diagram -->
     <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie" />
-
-    <!-- Right-half overlay linking to the second image -->
     <div class="right-link">
-      <a href="./ESP32-CAM.png" target="_blank" rel="noopener" aria-label="Voir ESP32-CAM"></a>
+      <a href="./ESP32-CAM.png" target="_blank" rel="noopener"
+         title="Voir ESP32-CAM" aria-label="Voir ESP32-CAM"></a>
     </div>
   </div>
 </body>
