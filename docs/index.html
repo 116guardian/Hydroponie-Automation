@@ -1,28 +1,28 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Système d’Hydroponie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { margin: 0; font-family: system-ui, sans-serif; }
-    .wrap { max-width: 1600px; margin: 24px auto; padding: 0 12px; }
-    img { display: block; }
+    .stage { position: relative; max-width: 1600px; margin: 24px auto; }
+    /* Image scales responsively */
+    .stage img { display: block; width: 100%; height: auto; }
+    /* Clickable overlay that covers the RIGHT HALF only */
+    .right-link { position: absolute; left: 50%; top: 0; right: 0; bottom: 0; }
+    .right-link a { display: block; width: 100%; height: 100%; cursor: pointer; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- Use ./ to force same-folder path; change width to your image’s native width -->
-    <img src="./Diagram_Hydroponie.png" width="1600"
-         usemap="#hydromap" alt="Système d’Hydroponie">
+  <div class="stage">
+    <!-- Your main diagram -->
+    <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie" />
 
-    <map name="hydromap">
-      <!-- sample hotspots -->
-      <area shape="rect" coords="360,394,560,580"
-            href="https://example.com/datasheet-ph" target="_blank" rel="noopener" alt="Sonde pH">
-      <area shape="rect" coords="940,490,1190,605"
-            href="https://example.com/datasheet-pompe" target="_blank" rel="noopener" alt="Pompe 1">
-    </map>
+    <!-- Right-half overlay linking to the second image -->
+    <div class="right-link">
+      <a href="./ESP32-CAM.png" target="_blank" rel="noopener" aria-label="Voir ESP32-CAM"></a>
+    </div>
   </div>
 </body>
 </html>
