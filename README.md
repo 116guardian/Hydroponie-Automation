@@ -1,7 +1,5 @@
 # Système Hydroponique - College Ahuntsic
 
-Cette repo contient:
-
-    - Schéma électrique
+Ce projet consiste a automatiser la croissance de plante par hydroponie
 
 
