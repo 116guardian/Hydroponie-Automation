@@ -12,20 +12,16 @@
 </head>
 <body>
   <div class="wrap">
-    <!-- Set width to the PNG’s native pixel width so the <area> coords match -->
-    <img src="Diagram_Hydroponie.png" width="1600"
+    <!-- Use ./ to force same-folder path; change width to your image’s native width -->
+    <img src="./Diagram_Hydroponie.png" width="1600"
          usemap="#hydromap" alt="Système d’Hydroponie">
 
     <map name="hydromap">
-      <!-- Rectangle coords: left,top,right,bottom in image pixels -->
-      <!-- EXAMPLES — replace href with your real links and adjust coords -->
+      <!-- sample hotspots -->
       <area shape="rect" coords="360,394,560,580"
-            href="https://example.com/datasheet-ph" target="_blank" rel="noopener"
-            alt="Sonde pH">
+            href="https://example.com/datasheet-ph" target="_blank" rel="noopener" alt="Sonde pH">
       <area shape="rect" coords="940,490,1190,605"
-            href="https://example.com/datasheet-pompe" target="_blank" rel="noopener"
-            alt="Pompe 1">
-      <!-- ajoutez d’autres <area> ici -->
+            href="https://example.com/datasheet-pompe" target="_blank" rel="noopener" alt="Pompe 1">
     </map>
   </div>
 </body>
