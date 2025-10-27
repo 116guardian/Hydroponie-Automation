@@ -8,20 +8,16 @@
     body { margin: 0; font-family: system-ui, sans-serif; }
     .stage { position: relative; max-width: 1600px; margin: 24px auto; }
     .stage img { display:block; width:100%; height:auto; }
-
-    /* Clickable hotspot with hover/focus box */
     .hotspot {
       position:absolute; display:block; background: transparent; outline: none;
       border-radius: 6px;
     }
-    .hotspot:hover,
-    .hotspot:focus {
+    .hotspot:hover, .hotspot:focus {
       box-shadow:
         0 0 0 3px rgba(0,123,255,.9) inset,
         0 0 0 3px rgba(0,123,255,.9);
       background: rgba(0,123,255,.08);
     }
-    /* Optional label on hover/focus */
     .hotspot::after {
       content: attr(data-label);
       position:absolute; left:8px; top:8px;
@@ -35,37 +31,37 @@
   <div class="stage">
     <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie">
 
-    <!-- pH sensor — EXACT values -->
+    <!-- pH sensor -> external DFRobot DO page (per your request) -->
     <a class="hotspot"
-       href="./ph-sensor-datasheet.pdf" target="_blank" rel="noopener"
+       href="https://wiki.dfrobot.com/Gravity__Analog_Dissolved_Oxygen_Sensor_SKU_SEN0237"
+       target="_blank" rel="noopener"
        aria-label="Sonde pH" data-label="Sonde pH"
        style="left:5%; top:10%; width:20%; height:36%;" tabindex="0"></a>
 
-    <!-- ESP32 module — EXACT values -->
+    <!-- ESP32 -> external user guide -->
     <a class="hotspot"
-       href="./ESP32-CAM.png" target="_blank" rel="noopener"
+       href="https://docs.espressif.com/projects/esp-idf/en/v5.3/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html"
+       target="_blank" rel="noopener"
        aria-label="ESP32" data-label="ESP32"
        style="left:42%; top:36%; width:14%; height:44%;" tabindex="0"></a>
 
-    <!-- Pompe 1 — EXACT values -->
+    <!-- Pump(s) -> local PDF -->
     <a class="hotspot"
-       href="./pompe1-specs.pdf" target="_blank" rel="noopener"
+       href="./NKP-Peristaltic-Pump.pdf" target="_blank" rel="noopener"
        aria-label="Pompe 1" data-label="Pompe 1"
        style="left:76%; top:18%; width:10%; height:72%;" tabindex="0"></a>
 
-    <!-- NEW: Water temperature sensor (your exact coords) -->
+    <!-- Water temperature sensor -> local PDF -->
     <a class="hotspot"
-       href="./water-temp-datasheet.pdf" target="_blank" rel="noopener"
+       href="./ds18b20.pdf" target="_blank" rel="noopener"
        aria-label="Température eau" data-label="Température eau"
        style="left:60%; top:48%; width:20%; height:22%;" tabindex="0"></a>
 
-    <!-- NEW: Dissolved oxygen sensor (your exact coords) -->
+    <!-- Dissolved oxygen sensor -> local PDF -->
     <a class="hotspot"
-       href="./dissolved-oxygen-datasheet.pdf" target="_blank" rel="noopener"
+       href="./Surveyor-DO-datasheet.pdf" target="_blank" rel="noopener"
        aria-label="Capteur d'Oxygène dissous" data-label="Capteur d'Oxygène dissous"
        style="left:60%; top:73%; width:18%; height:16%;" tabindex="0"></a>
-
-    <!-- Add more hotspots similarly -->
   </div>
 </body>
 </html>
