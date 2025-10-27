@@ -6,23 +6,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { margin: 0; font-family: system-ui, sans-serif; }
-    .stage { position: relative; max-width: 1600px; margin: 24px auto; line-height: 0; }
-    .stage img { display: block; width: 100%; height: auto; pointer-events: none; }
-    /* Right-half clickable overlay */
-    .right-link { position: absolute; top: 0; right: 0; bottom: 0; left: 50%;
-                  z-index: 10; pointer-events: auto; }
-    .right-link a { display: block; width: 100%; height: 100%; cursor: pointer; }
-    /* DEBUG: uncomment next line to see the clickable zone visually */
-    /* .right-link { background: rgba(0,0,0,0.12); } */
+    .stage { position: relative; max-width: 1600px; margin: 24px auto; }
+    .stage img { display:block; width:100%; height:auto; }
+    /* Hotspot styling */
+    .hotspot {
+      position:absolute; display:block;
+      /* make it clickable even if it has no background */
+      background: transparent;
+      /* for accessibility */
+      outline: none;
+    }
+    /* Show a box when hover or keyboard focus */
+    .hotspot:hover,
+    .hotspot:focus {
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.8) inset,
+                  0 0 0 3px rgba(0, 123, 255, 0.8);
+      background: rgba(0,123,255,0.08);
+      border-radius: 6px;
+    }
+    /* Optional: visible labels on hover */
+    .hotspot::after {
+      content: attr(data-label);
+      position: absolute; left: 8px; top: 8px;
+      padding: 2px 6px; font-size: 12px; background: rgba(0,0,0,0.6);
+      color: #fff; border-radius: 4px; opacity: 0; transition: opacity .15s linear;
+    }
+    .hotspot:hover::after, .hotspot:focus::after { opacity: 1; }
   </style>
 </head>
 <body>
   <div class="stage">
-    <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie" />
-    <div class="right-link">
-      <a href="./ESP32-CAM.png" target="_blank" rel="noopener"
-         title="Voir ESP32-CAM" aria-label="Voir ESP32-CAM"></a>
-    </div>
+    <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie">
+
+    <!-- EXAMPLES — replace href + percentages with yours -->
+    <!-- pH sensor block -->
+    <a class="hotspot" href="./ph-sensor-datasheet.pdf" target="_blank" rel="noopener"
+       aria-label="Sonde pH" data-label="Sonde pH"
+       style="left: 20%; top: 33%; width: 12%; height: 16%;" tabindex="0"></a>
+
+    <!-- ESP32 module -->
+    <a class="hotspot" href="./ESP32-CAM.png" target="_blank" rel="noopener"
+       aria-label="ESP32-CAM" data-label="ESP32-CAM"
+       style="left: 58%; top: 52%; width: 10%; height: 28%;" tabindex="0"></a>
+
+    <!-- Pompe 1 -->
+    <a class="hotspot" href="./pompe1-specs.pdf" target="_blank" rel="noopener"
+       aria-label="Pompe 1" data-label="Pompe 1"
+       style="left: 84%; top: 42%; width: 9%; height: 12%;" tabindex="0"></a>
+
+    <!-- Add more hotspots similarly -->
   </div>
 </body>
 </html>
