@@ -12,7 +12,7 @@
     /* Clickable hotspot with hover/focus box */
     .hotspot {
       position:absolute; display:block; background: transparent; outline: none;
-      border-radius: 6px; /* rounds the hover box corners */
+      border-radius: 6px;
     }
     .hotspot:hover,
     .hotspot:focus {
@@ -21,7 +21,7 @@
         0 0 0 3px rgba(0,123,255,.9);
       background: rgba(0,123,255,.08);
     }
-    /* Optional label on hover */
+    /* Optional label on hover/focus */
     .hotspot::after {
       content: attr(data-label);
       position:absolute; left:8px; top:8px;
@@ -35,7 +35,7 @@
   <div class="stage">
     <img src="./Diagram_Hydroponie.png" alt="Système d’Hydroponie">
 
-    <!-- pH sensor — EXACT values from your screenshot -->
+    <!-- pH sensor — EXACT values -->
     <a class="hotspot"
        href="./ph-sensor-datasheet.pdf" target="_blank" rel="noopener"
        aria-label="Sonde pH" data-label="Sonde pH"
@@ -53,17 +53,17 @@
        aria-label="Pompe 1" data-label="Pompe 1"
        style="left:76%; top:18%; width:10%; height:72%;" tabindex="0"></a>
 
-    <!-- NEW: Water temperature sensor (placeholder coords; tweak to fit your image) -->
+    <!-- NEW: Water temperature sensor (your exact coords) -->
     <a class="hotspot"
        href="./water-temp-datasheet.pdf" target="_blank" rel="noopener"
        aria-label="Température eau" data-label="Température eau"
-       style="left:24%; top:60%; width:12%; height:18%;" tabindex="0"></a>
+       style="left:60%; top:48%; width:20%; height:22%;" tabindex="0"></a>
 
-    <!-- NEW: Dissolved oxygen sensor (placeholder coords; tweak to fit your image) -->
+    <!-- NEW: Dissolved oxygen sensor (your exact coords) -->
     <a class="hotspot"
        href="./dissolved-oxygen-datasheet.pdf" target="_blank" rel="noopener"
-       aria-label="Oxygène dissous" data-label="Oxygène dissous"
-       style="left:30%; top:78%; width:12%; height:16%;" tabindex="0"></a>
+       aria-label="Capteur d'Oxygène dissous" data-label="Capteur d'Oxygène dissous"
+       style="left:60%; top:73%; width:18%; height:16%;" tabindex="0"></a>
 
     <!-- Add more hotspots similarly -->
   </div>
