@@ -6,26 +6,22 @@
   <title>Hydroponie Automation</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    body{margin:0;font-family:system-ui,sans-serif;background:#0b0d10;color:#fff}
-    .wrap{max-width:1200px;margin:0 auto;padding:16px}
+    html,body{height:100%} body{margin:0;background:#0b0d10}
+    .stage{height:100vh;max-height:100vh}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    
-
-    <model-viewer
-      src="assets/models/test-v2.glb?v=2"
-      ios-src="assets/models/test-v2.usdz?v=2"
-      camera-controls
-      auto-rotate
-      touch-action="pan-y"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      style="width:100%;height:70vh;border-radius:16px;overflow:hidden;background:#111">
-    </model-viewer>
-
-
-  </div>
+  <model-viewer class="stage"
+    src="assets/models/test-v2.glb?v=3"
+    ios-src="assets/models/test-v2.usdz?v=3"
+    camera-controls
+    auto-rotate
+    environment-image="neutral"
+    exposure="0.7"
+    shadow-intensity="0.7"
+    shadow-softness="0.9"
+    touch-action="pan-y"
+    style="width:100%;height:100%;display:block;border-radius:16px;overflow:hidden;background:#111">
+  </model-viewer>
 </body>
 </html>
