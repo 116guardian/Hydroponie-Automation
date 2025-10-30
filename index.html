@@ -1,13 +1,21 @@
-<!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Hydroponie Diagram</title></head>
-<body>
-  <img src="../Drawing1-Diagram Hydroponie.png" usemap="#hydromap" alt="Système Hydroponie" style="max-width:100%;height:auto;">
-  <map name="hydromap">
-    <!-- Rectangle coords: left,top,right,bottom in image pixels -->
-    <area shape="rect" coords="360,394,560,580" href="https://datasheet.link/your-ph-sensor" target="_blank" alt="pH Sensor">
-    <area shape="rect" coords="940,490,1190,605" href="https://datasheet.link/your-pump" target="_blank" alt="Pompe 1">
-    <!-- add more areas as needed -->
-  </map>
-</body>
-</html>
+<!-- put this once in <head> -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<!-- viewer block in <body> -->
+<section style="max-width:1200px;margin:0 auto;padding:16px">
+  <h2 style="margin:0 0 8px">3D Assembly Preview</h2>
+  <model-viewer
+    src="assets/models/test-v2.usdz"        <!-- use test%20v2.usdz if you kept the space -->
+    camera-controls
+    auto-rotate
+    touch-action="pan-y"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    style="width:100%;height:70vh;border-radius:16px;overflow:hidden;background:#0b0d10">
+  </model-viewer>
+
+  <!-- Optional: a small AR-only button for iOS Quick Look -->
+  <p style="margin:8px 0 0">
+    <a rel="ar" href="assets/models/test-v2.usdz">Open in AR (iPhone/iPad)</a>
+  </p>
+</section>
