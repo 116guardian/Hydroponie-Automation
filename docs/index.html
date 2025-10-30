@@ -6,22 +6,69 @@
   <title>Hydroponie Automation</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
-    html,body{height:100%} body{margin:0;background:#0b0d10}
-    .stage{height:100vh;max-height:100vh}
+    html,body{height:100%}
+    /* sky-blue top fading to white bottom */
+    body{
+      margin:0;
+      background: linear-gradient(#cfe8ff 0%, #e9f3ff 40%, #ffffff 100%);
+    }
+    model-viewer{
+      width:100%; height:100%;
+      display:block; border-radius:16px; overflow:hidden;
+      /* slight vignette like your screenshot’s edges */
+      box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset, 0 8px 32px rgba(0,0,0,.25);
+      background: transparent; /* let the gradient show through */
+    }
   </style>
 </head>
 <body>
-  <model-viewer class="stage"
-    src="assets/models/test-v2.glb?v=3"
-    ios-src="assets/models/test-v2.usdz?v=3"
-    camera-controls
-    auto-rotate
+  <model-viewer
+    src="assets/models/test-v2.glb?v=4"
+    ios-src="assets/models/test-v2.usdz?v=4"
     environment-image="neutral"
-    exposure="0.7"
-    shadow-intensity="0.7"
+    exposure="0.85"
+    shadow-intensity="0.6"
     shadow-softness="0.9"
-    touch-action="pan-y"
-    style="width:100%;height:100%;display:block;border-radius:16px;overflow:hidden;background:#111">
+    camera-controls
+    camera-orbit="35deg 20deg 3.2m"   <!-- tweak to your taste -->
+    field-of-view="35deg"
+    touch-action="pan-y">
   </model-viewer>
+
+  <script type="module">
+    // Try to recolor parts based on material names in the GLB.
+    // If all materials have the same name, see the note below.
+    const mv = document.querySelector('model-viewer');
+    mv.addEventListener('load', () => {
+      const mats = mv.model?.materials || [];
+      const gray = [0.72, 0.74, 0.78, 1];   // frame gray (light)
+      const white= [0.96, 0.96, 0.96, 1];   // pipes white
+
+      // heuristics by material name
+      mats.forEach(m => {
+        const name = (m.name || '').toLowerCase();
+        const pbr = m.pbrMetallicRoughness;
+        if (/(frame|support|structure|beam|bar|metal)/.test(name)) {
+          pbr.setBaseColorFactor(gray);
+          pbr.setMetallicFactor(0.0);
+          pbr.setRoughnessFactor(0.6);
+        } else if (/(pipe|tube|pvc|manifold|tray|deck|plate)/.test(name)) {
+          pbr.setBaseColorFactor(white);
+          pbr.setMetallicFactor(0.0);
+          pbr.setRoughnessFactor(0.3);
+        }
+      });
+
+      // Fallback: if there is exactly 1 material, make it a light gray
+      if (mats.length === 1) {
+        const pbr = mats[0].pbrMetallicRoughness;
+        pbr.setBaseColorFactor([0.88,0.88,0.9,1]);
+        pbr.setMetallicFactor(0.0);
+        pbr.setRoughnessFactor(0.55);
+        // To differentiate frame vs pipes, export the GLB with two materials:
+        // "Frame" and "PVC" (or rename in Blender), then this script will split colors.
+      }
+    });
+  </script>
 </body>
 </html>
