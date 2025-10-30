@@ -7,55 +7,34 @@
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     html,body{height:100%}
-    /* Sky blue → white, like your reference */
+    /* darker sky-blue → white */
     body{
       margin:0;
-      background: linear-gradient(#cfe8ff 0%, #e8f2ff 45%, #ffffff 100%);
+      background: linear-gradient(#4e8ffb 0%, #8fb6ff 45%, #ffffff 100%);
     }
     model-viewer{
       width:100%; height:100%;
-      display:block; background: transparent; /* let the gradient show */
-      border-radius:0; overflow:hidden;
+      display:block; background:transparent; /* let gradient show through */
     }
   </style>
 </head>
 <body>
   <model-viewer
-    src="assets/models/test-v2.glb?v=5"
-    ios-src="assets/models/test-v2.usdz?v=5"
+    src="assets/models/test-v2.glb?v=6"
+    ios-src="assets/models/test-v2.usdz?v=6"
     camera-controls
-    /* front-ish view, reduced perspective */
-    camera-orbit="0deg 90deg 3.1m"
-    field-of-view="20deg"
+    bounds="tight"
+    camera-target="auto"
+    /* front-ish view + farther radius so it starts unzoomed */
+    camera-orbit="0deg 90deg 160%"
+    field-of-view="24deg"
     min-field-of-view="18deg"
-    max-field-of-view="30deg"
-    /* softer, neutral light so grays stay gray */
+    max-field-of-view="50deg"
     environment-image="neutral"
     exposure="0.8"
     shadow-intensity="0.5"
     shadow-softness="0.9"
     touch-action="pan-y">
   </model-viewer>
-
-  <script type="module">
-    // Optional: recolor by material names if they exist
-    const mv = document.querySelector('model-viewer');
-    mv.addEventListener('load', () => {
-      const mats = mv.model?.materials || [];
-      const gray = [0.72, 0.74, 0.78, 1];   // frame
-      const white= [0.96, 0.96, 0.96, 1];   // pipes / trays
-      mats.forEach(m => {
-        const n = (m.name||'').toLowerCase();
-        const p = m.pbrMetallicRoughness;
-        if (/(frame|support|structure|metal|beam|bar)/.test(n)) {
-          p.setBaseColorFactor(gray); p.setMetallicFactor(0); p.setRoughnessFactor(0.6);
-        } else if (/(pipe|pvc|tube|tray|deck|plate)/.test(n)) {
-          p.setBaseColorFactor(white); p.setMetallicFactor(0); p.setRoughnessFactor(0.35);
-        }
-      });
-      // If your GLB has only one material, give the frame & pipes distinct materials in Blender
-      // (e.g., "Frame" and "PVC") and re-export—then this script will pick them up automatically.
-    });
-  </script>
 </body>
 </html>
