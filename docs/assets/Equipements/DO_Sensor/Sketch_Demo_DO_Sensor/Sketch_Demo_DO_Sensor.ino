@@ -1,32 +1,23 @@
-#include <WiFi.h>
+#include <ESP32Servo.h>
 
-const char* ssid = "test24";
-const char* password = "test12345";
+Servo myServo;
+
+const int servoPin = 4;   // D4 / GPIO4
+int angle = 0;
+int stepSize = 1;
 
 void setup() {
-  Serial.begin(115200);
-  delay(1000);
-
-  WiFi.mode(WIFI_STA);
-  WiFi.setSleep(false);
-  WiFi.disconnect(true, true);
-  delay(500);
-
-  WiFi.begin(ssid, password);
-
-  Serial.println("Connecting...");
-  unsigned long t0 = millis();
-
-  while (millis() - t0 < 15000) {
-    if (WiFi.status() == WL_CONNECTED) {
-      Serial.println("Connected");
-      Serial.println(WiFi.localIP());
-      return;
-    }
-    delay(300);
-    Serial.print(".");
-  }
-
-  Serial.println("\nFailed");
+  myServo.setPeriodHertz(50);      // Standard servo frequency
+  myServo.attach(servoPin, 500, 2400); // Min/max pulse width in microseconds
 }
-void loop() {}
+
+void loop() {
+  myServo.write(angle);
+  delay(15);   // Controls sweep speed
+
+  angle += stepSize;
+
+  if (angle >= 180 || angle <= 0) {
+    stepSize = -stepSize;  // Reverse direction
+  }
+}
