@@ -97,8 +97,8 @@ The project documents the complete development process, including sensor interfa
 <img width="3307" height="2339" alt="Schema_electrique_carte_de_controle-1" src="https://github.com/user-attachments/assets/921ffb5c-eca3-45f0-be5a-8cf18cde435c" />
 
 [Schema_electrique_carte_de_controle.pdf](https://github.com/user-attachments/files/30188663/Schema_electrique_carte_de_controle.pdf)
-<!-- Add a link to the complete controller schematic PDF here. --><img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/9d78c4fd-e175-4b7b-b514-ef7914362c06" />
-<img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/b6c89bc1-6743-4f18-9aa7-b1b15e1ef5c3" />
+<!-- Add a link to the complete controller schematic PDF here. -->
+<img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/9d78c4fd-e175-4b7b-b514-ef7914362c06" />
 
 
 ---
@@ -124,14 +124,10 @@ The ESP32 was selected because it combines analog inputs, digital outputs, netwo
 
 The current architecture treats the ESP32 primarily as an equipment-control node. High-level control decisions and the main user interface are handled by the connected computer.
 
-<!-- Add an ESP32 controller schematic or wiring image here. -->
-<img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/50b18141-93c7-4355-9f1f-4384f7ab951a" />
 
-  <img width="2339" height="1653" alt="Hydroponie_GFX-Diagramme de Branchement-1" src="https://github.com/user-attachments/assets/2ec92322-b8cf-41f2-909f-cdf2c1b90414" />
-[Hydroponie_GFX-Diagramme de Branchement.pdf](https://github.com/user-attachments/files/30188703/Hydroponie_GFX-Diagramme.de.Branchement.pdf)
+<img width="2339" height="1653" alt="Hydroponie_GFX-Diagramme de Branchement-1" src="https://github.com/user-attachments/assets/ff239782-5022-4e0b-8d9e-e6f2881b1646" />
+[Hydroponie_GFX-Diagramme de Branchement.pdf](https://github.com/user-attachments/files/30191578/Hydroponie_GFX-Diagramme.de.Branchement.pdf)
 
-[Hydroponie_GFX-Pinout Simple.pdf](https://github.com/user-attachments/files/30188749/Hydroponie_GFX-Pinout.Simple.pdf)
-<img width="2339" height="1653" alt="Hydroponie_GFX-Pinout Simple-1" src="https://github.com/user-attachments/assets/e5b10566-39a9-40e4-91f0-d5fc8ffbf419" />
 
 ## Current Prototype I/O Assignment
 
@@ -151,10 +147,14 @@ The present prototype uses the following ESP32 connections:
 | EC measurement           |    GPIO 32 | Analog input | Reads the electrical-conductivity interface |
 
 This pin assignment represents the current prototype and may be revised as the controller is transferred to a dedicated PCB.
+<img width="2339" height="1653" alt="Hydroponie_GFX-Pinout Simple-1" src="https://github.com/user-attachments/assets/c1b9ba9d-fb85-4cf3-9166-f21a3b5345ed" />
+[Hydroponie_GFX-Pinout Simple.pdf](https://github.com/user-attachments/files/30191673/Hydroponie_GFX-Pinout.Simple.pdf)
 
 ---
 
 ## pH Measurement Interface
+
+<img width="800" height="800" alt="PH-110-picture" src="https://github.com/user-attachments/assets/977e4240-9d28-418a-87c5-e557fb95cc63" />
 
 The pH measurement system uses an industrial-style transmitter that produces a **4–20 mA current signal**.
 
