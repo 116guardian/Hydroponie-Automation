@@ -31,6 +31,7 @@ The project also serves as a practical electronics, embedded-software and automa
 
 <img width="4624" height="3472" alt="PXL_20260620_145852862" src="https://github.com/user-attachments/assets/0e6c28e1-ea25-4f52-a02e-fa6eec5dd8d7" />
 
+<img width="3472" height="4624" alt="PXL_20260621_202005503" src="https://github.com/user-attachments/assets/23a80b96-86de-4a69-afc7-f357d509e275" />
 
 ---
 
@@ -38,13 +39,14 @@ The project also serves as a practical electronics, embedded-software and automa
 
 The platform is divided into several cooperating subsystems:
 
-* A hydroponic reservoir and water-distribution circuit.
+* A 100L solution reservoir.
+* A main submersible water pump.
+* A water circulation circuit for irrigation.
 * pH and electrical-conductivity sensors.
 * Four nutrient and pH dosing pumps.
-* A main water-circulation pump.
 * Two independently controlled lighting outputs.
-* An ESP32 hardware-control node.
-* A computer running the supervisory software.
+* A wifi-enabled custom micro-controller platform.
+* A remote computer running the supervisory software.
 * A browser-based monitoring and control interface.
 * Local data storage and historical visualization.
 
@@ -84,11 +86,10 @@ The hydroponics platform is built around custom electronics and software develop
 
 The electronics are organized around an ESP32 control node connected to:
 
-* Two analog measurement channels.
-* Four dosing-pump outputs.
-* One circulation-pump output.
-* Two lighting outputs.
-* One switched sensor-power output.
+* 3 analog measurement channels, one with gated 150 Ohm resistor for the 4-20mA pH sensor.
+* 5 low-side mosfet outputs, rated for 12V, 2A, for the dosing pumps.
+* 1 circulation-pump output, relay controlled 120Vac output.
+* 2 lighting outputs, relay controlled 120Vac output.
 * A local network connection to the supervisory computer.
 
 The project documents the complete development process, including sensor interfacing, output-driver design, embedded firmware, communication protocols, web-interface development, calibration, PCB design and long-duration system testing.
