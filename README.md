@@ -1,4 +1,6 @@
-<!-- Replace this comment with the main system block diagram or project photograph. -->
+[Schema_electrique_carte_de_controle.pdf](https://github.com/user-attachments/files/30188662/Schema_electrique_carte_de_controle.pdf)
+<img width="2339" height="1653" alt="Diagramme de Block-1" src="https://github.com/user-attachments/assets/fd31f5b3-9347-4c4b-bc5b-74e0fd84f8cc" />
+[Diagramme de Block.pdf](https://github.com/user-attachments/files/30188402/Diagramme.de.Block.pdf)
 
 # Hydroponics Control and Monitoring Research Platform
 
@@ -25,7 +27,10 @@ The project also serves as a practical electronics, embedded-software and automa
 * Evaluate the reliability of automated nutrient and irrigation management.
 * Establish the foundation for future closed-loop pH and nutrient regulation.
 
-<!-- Add an overall photograph or render of the hydroponics installation here. -->
+<img width="4624" height="3472" alt="PXL_20260508_174301336" src="https://github.com/user-attachments/assets/765158bf-b524-4a38-bf2c-2bcc9519690a" />
+
+<img width="4624" height="3472" alt="PXL_20260620_145852862" src="https://github.com/user-attachments/assets/0e6c28e1-ea25-4f52-a02e-fa6eec5dd8d7" />
+
 
 ---
 
@@ -50,6 +55,9 @@ A separate computer performs the higher-level supervisory functions. It communic
 This separation keeps time-sensitive hardware control close to the equipment while allowing the interface, data processing and automation logic to evolve independently.
 
 <!-- Add the complete hydroponics system block diagram here. -->
+<img width="2339" height="1653" alt="Diagramme de Block-1" src="https://github.com/user-attachments/assets/fd31f5b3-9347-4c4b-bc5b-74e0fd84f8cc" />
+[Diagramme de Block.pdf](https://github.com/user-attachments/files/30188402/Diagramme.de.Block.pdf)
+
 
 ---
 
@@ -87,7 +95,12 @@ The project documents the complete development process, including sensor interfa
 
 <!-- Add the controller schematic or PCB overview here. -->
 
-<!-- Add a link to the complete controller schematic PDF here. -->
+<img width="3307" height="2339" alt="Schema_electrique_carte_de_controle-1" src="https://github.com/user-attachments/assets/921ffb5c-eca3-45f0-be5a-8cf18cde435c" />
+
+[Schema_electrique_carte_de_controle.pdf](https://github.com/user-attachments/files/30188663/Schema_electrique_carte_de_controle.pdf)
+<!-- Add a link to the complete controller schematic PDF here. --><img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/9d78c4fd-e175-4b7b-b514-ef7914362c06" />
+<img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/b6c89bc1-6743-4f18-9aa7-b1b15e1ef5c3" />
+
 
 ---
 
@@ -113,8 +126,13 @@ The ESP32 was selected because it combines analog inputs, digital outputs, netwo
 The current architecture treats the ESP32 primarily as an equipment-control node. High-level control decisions and the main user interface are handled by the connected computer.
 
 <!-- Add an ESP32 controller schematic or wiring image here. -->
+<img width="1066" height="969" alt="preview2D" src="https://github.com/user-attachments/assets/50b18141-93c7-4355-9f1f-4384f7ab951a" />
 
----
+  <img width="2339" height="1653" alt="Hydroponie_GFX-Diagramme de Branchement-1" src="https://github.com/user-attachments/assets/2ec92322-b8cf-41f2-909f-cdf2c1b90414" />
+[Hydroponie_GFX-Diagramme de Branchement.pdf](https://github.com/user-attachments/files/30188703/Hydroponie_GFX-Diagramme.de.Branchement.pdf)
+
+[Hydroponie_GFX-Pinout Simple.pdf](https://github.com/user-attachments/files/30188749/Hydroponie_GFX-Pinout.Simple.pdf)
+<img width="2339" height="1653" alt="Hydroponie_GFX-Pinout Simple-1" src="https://github.com/user-attachments/assets/e5b10566-39a9-40e4-91f0-d5fc8ffbf419" />
 
 ## Current Prototype I/O Assignment
 
