@@ -29,8 +29,6 @@ The project also serves as a practical electronics, embedded-software and automa
 
 <img width="4624" height="3472" alt="PXL_20260508_174301336" src="https://github.com/user-attachments/assets/765158bf-b524-4a38-bf2c-2bcc9519690a" />
 
-<img width="4624" height="3472" alt="PXL_20260620_145852862" src="https://github.com/user-attachments/assets/0e6c28e1-ea25-4f52-a02e-fa6eec5dd8d7" />
-
 <img width="3472" height="4624" alt="PXL_20260621_202005503" src="https://github.com/user-attachments/assets/23a80b96-86de-4a69-afc7-f357d509e275" />
 
 ---
